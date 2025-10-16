@@ -5,7 +5,7 @@ from aiogram.types import Message
 
 class IsBackToMenu(BaseFilter):
 
-    def __call__(self, message: Message, state: FSMContext):
+    async def __call__(self, message: Message, state: FSMContext) -> bool:
 
         if message.text == "Назад в меню":
 

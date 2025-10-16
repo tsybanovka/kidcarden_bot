@@ -1,13 +1,12 @@
 from keyboards.functions import keyboards
-from aiogram.utils.keyboard import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardBuilder
+from aiogram.utils.keyboard import InlineKeyboardButton, InlineKeyboardMarkup, InlineKeyboardBuilder
 
 
 @keyboards
-def create_cancel_kb() -> ReplyKeyboardMarkup:
+def create_cancel_kb() -> InlineKeyboardMarkup:
 
-    kb = ReplyKeyboardBuilder()
+    kb = InlineKeyboardBuilder()
 
-    kb.row(KeyboardButton(text="Да"), KeyboardButton(text="Нет"))
-    kb.row(KeyboardButton(text="Назад в меню"))
+    kb.row(InlineKeyboardButton(text="Назад", callback_data="cancel"))
 
-    return kb.as_markup(resize_keyboard=True)
+    return kb.as_markup()
