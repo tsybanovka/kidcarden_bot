@@ -13,6 +13,7 @@ from handlers.main_menu.first_help_center import router as first_help_center
 from handlers.main_menu.reminders import router as reminders
 from handlers.main_menu.ask_gigachat import router as ask_question
 from handlers.main_menu.employees import router as employees
+from handlers.main_menu.groups_teachers import router as groups_teachers
 
 router = Router()
 
@@ -24,6 +25,7 @@ router.include_router(first_help_center)
 router.include_router(reminders)
 router.include_router(ask_question)
 router.include_router(employees)
+router.include_router(groups_teachers)
 
 
 @router.message(CommandStart())

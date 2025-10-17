@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove
 from aiogram.fsm.context import FSMContext
 from filters import Main_menu
-from keyboards import cancel_kb
+from keyboards import cancel_kb, main_menu_kb
 
 router = Router()
 
@@ -20,6 +20,6 @@ async def employee(message: Message, state: FSMContext):
 @router.callback_query(Main_menu.employee, F.data == "cancel")
 async def go_back_to_the_main_menu(data: CallbackQuery, state: FSMContext):
 
-    await data.message.answer(text="Возвращаю в главное меню")
+    await data.message.answer(text="Возвращаю в главное меню", reply_markup=main_menu_kb())
 
     await state.set_state(Main_menu.menu)
