@@ -35,8 +35,10 @@ async def start(message: Message, state: FSMContext):
 
     if not st:
 
-        with open("Wellcome_text.txt", "r", encoding="utf-8") as file:
+        with open("database/Wellcome_text.txt", "r", encoding="utf-8") as file:
             await message.answer(text="".join(file.readlines()), reply_markup=main_menu_kb())
+
+        await state.set_state(Main_menu.menu)
 
     else:
 

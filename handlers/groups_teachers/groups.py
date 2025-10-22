@@ -6,7 +6,7 @@ from aiogram.utils.media_group import MediaGroupBuilder
 
 from database import Database_read
 from filters import Main_menu
-from aiogram.types import Message, FSInputFile, InputMediaPhoto
+from aiogram.types import Message, FSInputFile
 
 router = Router()
 
